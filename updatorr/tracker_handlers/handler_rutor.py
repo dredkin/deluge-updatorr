@@ -14,7 +14,7 @@ class RutorHandler(GenericPublicTrackerHandler):
         page_links = self.find_links(page_html)
         download_link = None
         for page_link in page_links:
-            if linkToFind in page_link:
+            if linkToFind in page_link.decode(errors="ignore"):
                 download_link = page_link
                 break
         return download_link
